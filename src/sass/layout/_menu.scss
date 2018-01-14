@@ -1,0 +1,156 @@
+.menu {
+	position: fixed;
+  display: block;
+	opacity: 0.8;
+	top: 10px;
+	right: 10px;
+	width: 50px;
+	height: 50px;
+  z-index: 2000;
+	cursor: pointer;
+	transition: opacity 0.2s linear;
+
+	&:hover {
+		opacity: 1;
+	}
+
+	span {
+		display: block;
+		height: 4px;
+		width: 40px;
+		border-radius: 40px;
+		background-color: $color-white;
+		position: absolute;
+		right: 3px;
+		top: 3px;
+		overflow: hidden;
+		filter: drop-shadow(0 1px 3px $color-black-opacity);
+		transition: all 0.4s ease;
+
+		&:nth-child(1) {
+			margin-top: 10px;
+			z-index: 9;
+		}
+
+		&:nth-child(2) {
+			margin-top: 25px;
+		}
+
+		&:nth-child(3) {
+			margin-top: 40px;
+		}
+	}
+}
+
+.sub-menu {
+	overflow: hidden;
+	position: absolute;
+	height: 0;
+	width: 0;
+	right: 0;
+	top: 0;
+	background-color: $color-menu;
+	border-radius: 50%;
+	z-index: 20;
+	transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	
+	li {
+		display: block;
+		float: right;
+		clear: both;
+		height: auto;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+		&:first-child {
+			margin-top: 180px;
+		}
+
+		&:nth-child(n+1) {
+			transition-delay: 0.05s;
+		}
+
+		&:nth-child(2n) {
+			transition-delay: 0.10s;
+		}
+
+		&:nth-child(3n) {
+			transition-delay: 0.15s;
+		}
+
+		&:nth-child(4n) {
+			transition-delay: 0.20s;
+		}
+
+		&:nth-child(5n) {
+			transition-delay: 0.25s;
+		}
+
+		a {
+			position: relative;
+			display: block;
+			color: $color-white;
+			width: 100%;
+			padding-left: 10px;
+			line-height: 40px;
+			z-index: 100;
+
+			&:after {
+				content: '';
+				position: absolute;
+				background: $color-menu-link;
+				top: 0;
+				right: 0;
+				width: 0;
+				height: 100%;
+				z-index: -1;
+				border-radius: 50%;
+				transition: width .3s;
+			}
+			
+			&:hover {
+				&:after {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.opened {
+	.sub-menu {
+		opacity: 1;
+		height: 700px;
+		width: 400px;
+	}
+
+	span:nth-child(2) {
+		overflow: visible;
+	}
+	
+	span:nth-child(1), span:nth-child(3) {
+		z-index: 100;
+		transform: rotate(45deg);
+	}
+
+	span:nth-child(1) {
+		transform: rotate(45deg) translateY(12px) translateX(12px);
+	}
+
+	span:nth-child(2) {
+		height: 700px;
+		width: 400px;
+		right: -160px;
+		top: -160px;
+		border-radius: 50%;
+		background-color: $color-menu;
+	}
+
+	span:nth-child(3) {			
+		transform: rotate(-45deg) translateY(-10px) translateX(10px);
+	}
+
+	li {
+		margin-right: 168px;
+	}
+}
+  

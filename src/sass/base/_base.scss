@@ -1,0 +1,56 @@
+$color-black: rgb(0, 0, 0);
+$color-white: rgb(255, 255, 255);
+$color-white-opacity: rgba(255, 255, 255,.8);
+$color-gray: rgb(187, 187, 187);
+$color-dark: rgb(22, 22, 22);
+$color-black-opacity: rgba(0,0,0,.8);
+$color-black-opacityMedium: rgba(0,0,0,.6);
+$color-warning: rgb(242, 95, 92);
+$color-orange: rgba(255, 127, 80, 0.8);
+$color-menu: rgba(38, 80, 133, 0.6);
+$color-menu-link: rgba(2, 17, 46, 0.5);
+
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  background: $color-dark;
+  color: $color-white;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.logo {
+  display: flex;
+  margin: 10px;
+  height: 60px;
+  z-index: 2000;
+
+  span {
+    display: inline-block;
+    font-size: 2.5rem;
+    line-height: 60px;
+    margin-left: 80px;
+  }
+
+  img {
+    z-index: 2000;
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    filter: drop-shadow(0 1px 3px $color-black-opacity);
+  }
+
+  @media screen and (max-width: 768px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    span {
+      display: none;
+    }
+  }
+}

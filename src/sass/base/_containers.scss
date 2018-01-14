@@ -1,0 +1,23 @@
+.container {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.row {
+  @media screen and (min-width: 768px) {
+    margin: 0 -15px;
+  }
+}
+
+.container__cards {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  padding-bottom: 100px;
+  min-height: 50vh;
+
+  @media screen and (max-width: 768px) {
+    justify-content: space-between;
+  }
+}

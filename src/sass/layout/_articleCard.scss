@@ -1,0 +1,111 @@
+.article__card {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  width: 31%;
+  margin: 20px 1%;
+  border-radius: 10px;
+  text-decoration: none;
+  color: $color-black;
+  background: $color-white;
+  box-shadow: 0 0 20px $color-black;
+  transition: all .2s cubic-bezier(0.15, 0.8, 1, 0.9);
+
+  @media screen and (max-width: 768px) {
+    width: 48%;
+    margin: 20px 0;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+
+  &:before {
+    content: 'Read';
+    position: absolute;
+    font-size: 1.5rem;
+    color: $color-white;
+    text-align: center;
+    bottom: -20px;
+    width: 100%;
+    text-align: center;
+    z-index: -1;
+    transition: all .2s ease-out;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 0;
+    width: 0;
+    border-radius: 50%;
+    transform: translateY(50%) translateX(-50%);
+    background-image: radial-gradient(
+      circle, 
+      hsla(215, 100%, 90%, 1) 0%, 
+      hsla(215, 100%, 90%, 1) 10%, 
+      hsla(215, 100%, 86%, 1) 10%, 
+      hsla(215, 100%, 86%, 1) 20%, 
+      hsla(215, 100%, 82%, 1) 20%, 
+      hsla(215, 100%, 82%, 1) 30%, 
+      hsla(215, 100%, 78%, 1) 30%, 
+      hsla(215, 100%, 78%, 1) 40%, 
+      hsla(215, 100%, 74%, 1) 40%,
+      hsla(215, 100%, 74%, 1) 50%,
+      hsla(215, 100%, 70%, 1) 50%,
+      hsla(215, 100%, 70%, 1) 60%,
+      hsla(215, 100%, 68%, 1) 60%,
+      hsla(215, 100%, 68%, 1) 70%,
+      hsla(215, 100%, 64%, 1) 70%,
+      hsla(215, 100%, 64%, 1) 80%,
+      hsla(215, 100%, 58%, 1) 80%,
+      hsla(215, 100%, 58%, 1) 90%,
+      hsla(215, 100%, 54%, 1) 90%,
+      hsla(215, 100%, 54%, 1) 100%
+    );
+    transition: all .2s ease-out;
+  }
+
+  @media screen and (min-width: 768px) {
+    &:hover {
+      &:after {
+        height: 230%;
+        width: 230%;
+      }
+  
+      &::before {
+        bottom: 10px;
+        z-index: 10;
+      }
+  
+      .article__card-content {
+        margin-top: -200px;
+        transition: all .2s ease-out;
+        transition-delay: .1s;
+        background-blend-mode: darken;
+        color: $color-black-opacityMedium;
+      }
+    }
+  }
+
+  &-image {
+    background: $color-gray;
+
+    img {
+      object-fit: cover;
+      height: 200px;
+      width: 100%;
+    }
+  }
+
+  &-content {
+    padding: 10px 20px 20px;
+    z-index: 100;
+    position: relative;
+    transition-delay: 0s;
+    transition: all 0s;
+  }
+}
