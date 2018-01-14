@@ -1,5 +1,5 @@
 {
-  "name": "movie-ssr-app",
+  "name": "news-ssr-app",
   "version": "1.0.0",
   "main": "server.js",
   "engines": {
@@ -15,7 +15,7 @@
     "build:server": "webpack --config webpack.server.js -p",
     "build:client": "webpack --config webpack.client.js -p",
     "start": "node build/bundle.js",
-    "postinstall": "npm-run-all --parallel build:*"
+    "postinstall": "webpack --config webpack.server.js -p && webpack --config webpack.client.js -p"
   },
   "dependencies": {
     "axios": "^0.17.1",
