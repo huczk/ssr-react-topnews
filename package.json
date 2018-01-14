@@ -15,7 +15,7 @@
     "build:server": "webpack --config webpack.server.js -p",
     "build:client": "webpack --config webpack.client.js -p",
     "start": "node build/bundle.js",
-    "postinstall": "webpack --config webpack.server.js -p && webpack --config webpack.client.js -p"
+    "postinstall": "webpack -p --config ./webpack.server.js && webpack -p --config ./webpack.client.js"
   },
   "dependencies": {
     "axios": "^0.17.1",
