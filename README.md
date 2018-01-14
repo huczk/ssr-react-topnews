@@ -1,6 +1,6 @@
 # TopNews app - react ssr
 
-### Visit the app - 
+### Visit the app on [heroku](https://topnews-ssr.herokuapp.com/)
 
 ### How to start this project locally:
 - clone this repository
